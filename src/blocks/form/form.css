@@ -1,0 +1,15 @@
+@import url("form-row.css");
+@import url("form-input.css");
+@import url("form-submit.css");
+
+.form {
+  inline-size: 100%;
+  max-inline-size: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+  background-color: var(--accent-background-color-alpha);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--radius);
+  padding: var(--main-gap);
+}

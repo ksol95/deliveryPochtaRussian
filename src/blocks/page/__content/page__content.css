@@ -1,0 +1,14 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+.page__content {
+  background-color: black;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}

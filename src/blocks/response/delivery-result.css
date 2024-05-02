@@ -1,0 +1,13 @@
+.delivery-result{
+  padding: var(--main-gap);
+  background-color: var(--second-accent-color-alpha);
+  color: var(--second-accent-color);
+  border: 1px solid var(--second-accent-color);
+  border-inline-start-width: .5em;
+  cursor: default;
+}
+
+.delivery-result p{
+  margin: 0;
+  line-height: 1.2;
+}

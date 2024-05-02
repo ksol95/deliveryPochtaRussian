@@ -1,0 +1,11 @@
+:root {
+  --background-color: rgba(015, 000, 000, 1);
+  --main-text-color: rgba(100, 255, 255, 1);
+  --accent-color: rgba(255, 100, 100, 1);
+  --accent-background-color-alpha: rgba(255, 100, 100, 0.4);
+  --second-accent-color: rgba(255, 200, 100, 1);
+  --second-accent-color-alpha: rgba(255, 200, 100, 0.4);
+  --radius: 3px;
+  --main-gap: 1em;
+  --second-gap: 0.5em;
+}

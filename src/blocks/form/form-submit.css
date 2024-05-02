@@ -1,0 +1,27 @@
+.form__submit{
+  cursor: pointer;
+  position: relative;
+}
+.form__submit .text{
+  position: relative;
+  font-weight: bold;
+  z-index: 2;
+}
+.form__submit::after{
+  z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--second-accent-color);
+  transition: background-color .3s ease, scale .3s ease;
+  scale: 0;
+}
+
+.form__submit:hover.form__submit::after{
+  background-color: var(--second-accent-color-alpha);
+  scale: 1;
+}
+.form__submit:hover.form__submit{
+  color: var(--second-accent-color);
+  border-color: var(--second-accent-color);
+}
