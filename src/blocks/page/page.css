@@ -2,12 +2,13 @@
 @import url("./__section/page__section.css");
 
 .page {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   height: 100vh;
   display: flex;
   gap: var(--main-gap);
   flex-direction: column;
-  background: linear-gradient(0deg, #000 0%, var(--background-color) 80%) no-repeat;
+  background: linear-gradient(0deg, #000 0%, var(--background-color) 80%)
+    no-repeat;
   color: var(--main-text-color);
-
+  margin-bottom: 1em;
 }
