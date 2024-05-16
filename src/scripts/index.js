@@ -83,7 +83,15 @@ const calculate = () => {
               </li>
               <li>
                 <small><strong>
-                  Итог: ${formatNumber(
+                  Чек: ${formatNumber(
+                    Math.round(res.ground.valnds / 100) +
+                      res.cover.valnds / 100 +
+                      res.service.valnds / 100
+                  )}
+                </strong></small>
+              <li>
+                <small><strong>
+                  Чек + доп.: ${formatNumber(
                     Math.round(res.ground.valnds / 100) +
                       res.cover.valnds / 100 +
                       res.service.valnds / 100 +
