@@ -51,8 +51,7 @@ const calculate = () => {
       postCalculate(newConfig).then((res) => {
         console.log(res);
         response.innerHTML = "Загрузка...";
-        let sum =
-          Math.round(res.paynds / 100 / 100) * 100 + postConfig.increment;
+        let sum = Math.round(res.paynds / 100 / 10) * 10 + postConfig.increment;
         let timeMin = res.delivery.min;
         let timeMax = res.delivery.max;
         let total = postConfig.sumoc / 100 + sum;
@@ -62,25 +61,47 @@ const calculate = () => {
         elem.innerHTML = `
             <p>Детали расчёта (не для клиента)</p>
             <ul>
-              <li><small>Тариф: ${Math.round(
-                res.ground.valnds / 100
-              )} руб.</small></li>
-              <li><small>Плата за объявленную ценность: ${
-                res.cover.valnds / 100
-              } руб.</small></li>
-              <li><small>Дополнительные услуги: ${
-                res.service.valnds / 100
-              } руб.</small></li>
-              <li><small>Допы: ${postConfig.increment} руб.</small></li>
+              <li>
+                <small>
+                  Тариф: ${Math.round(res.ground.valnds / 100)} руб.
+                </small>
+              </li>
+              <li>
+                <small>
+                  Плата за объявленную ценность: ${res.cover.valnds / 100} руб.
+                </small>
+              </li>
+              <li>
+                <small>
+                  Опись вложения: ${res.service.valnds / 100} руб.
+                </small>
+              </li>
+              <li>
+                <small>
+                  Доп.: ${postConfig.increment} руб.
+                </small>
+              </li>
+              <li>
+                <small><strong>
+                  Итог: ${formatNumber(
+                    Math.round(res.ground.valnds / 100) +
+                      res.cover.valnds / 100 +
+                      res.service.valnds / 100 +
+                      postConfig.increment
+                  )}
+                </strong></small>
+              </li>
             </ul>
             <p>Расчёт для клиента:</p>
             <ul>
               <li>Стоимость доставки: ${formatNumber(sum)} руб.;</li>
               <li>Срок доставки: от ${++timeMin} до ${++timeMax} дней;</li>
               <li>Итого: ${formatNumber(total)} руб.;</li>
-              <li>(+ комиссия за денежный перевод через почту России: ${formatNumber(
-                Math.round(сommission(total))
-              )} руб.)</li>
+              <li>
+                (+ комиссия за денежный перевод через почту России: 
+                ${formatNumber(Math.round(сommission(total)))}
+                руб.)
+               </li>
             </ul>
           `;
         response.innerHTML = "";
